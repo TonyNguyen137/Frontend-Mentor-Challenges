@@ -1,0 +1,28 @@
+@mixin vp-600{
+    .article {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+
+        &__product-name {
+        font-size: 3.5rem;
+
+        }
+
+        &__product-description {
+            font-size: 1.5rem;
+        }
+
+        &__price-wrapper {
+            gap:2.3rem;
+
+            &__current-price {
+                font-size: 3.4rem;
+            }
+        }
+
+    } 
+
+    .attribution {
+        align-self: end;
+    }
+}
