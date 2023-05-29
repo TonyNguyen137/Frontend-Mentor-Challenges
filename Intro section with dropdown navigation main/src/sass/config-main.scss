@@ -1,0 +1,77 @@
+@use "config-spacing" as *;
+@use "config-color" as *;
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+/*
+===============================
+reset
+===============================
+*/
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow-x: hidden;
+
+    @include spacingDeclaration;
+    @include colorPalette;
+
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    color: var(--medium-gray);
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1;
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: relative;
+    overflow-x: hidden;
+
+}
+
+//overlay
+body:has(.menu-btn[aria-expanded="true"])::after {
+    content: "";
+    z-index:1;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0 0 0 / 0.6);
+
+}
+
+img {
+    max-width: 100%;
+}
+
+
+.container {
+    max-width: 102.4rem;
+}
+
+.h-1 {
+    color: var(--a-black);
+    font-size: 3.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+button {
+    all: unset;
+}
+
+.icon {
+    display: block;
+}

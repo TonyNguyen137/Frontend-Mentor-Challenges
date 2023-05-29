@@ -1,0 +1,267 @@
+@use "config-spacing" as *;
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-sm);
+    padding-bottom: var(--space-lg-l);
+    // position: relative;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+
+    & .menu-btn {
+        z-index: 3;
+
+        & .menu-icon {
+            width: 3.2rem;
+            height: 1.8rem;
+            background-repeat: no-repeat;
+            background-image: url("../../images/icon-menu.svg");
+        }
+    
+        & .menu-close-icon {
+            width: 2.6rem;
+            height: 2.6rem;
+            background-repeat: no-repeat;
+            background-image: url("../../images/icon-close-menu.svg");
+        }
+    
+        &[aria-expanded="false"] .menu-close-icon {
+            display:none;
+        }
+        
+        &[aria-expanded="true"] .menu-icon {
+            display:none;
+        } 
+    
+        &[aria-expanded="true"] ~ .main-nav{
+            transform: translate(0);
+        } 
+    }
+    
+    .main-nav {
+        background-color: #fff;
+        position: absolute;
+        top:0;
+        right:0;
+        z-index: 2;
+        height: 100%;
+        width: 65%;
+        overflow-x: hidden;
+        transform: translateX(100%);
+        transition: all 0.5s;
+        padding-top: var(--space-xxl);
+        padding-left: var(--space-md-l);
+        padding-right: var(--space-md);
+
+        
+        &__main-list > :nth-child(4) {
+            margin-top: var(--space-md);
+
+        }
+
+        &__main-link {
+
+            &:has([aria-expanded="true"]) .main-nav__dropdown-list {
+                margin-bottom: var(--space-md);
+                height: auto
+            }
+            
+        }
+
+
+        &__sub-link {
+            --icon: url("../../images/icon-todo.svg");
+            --icon-width: 1.7rem;
+            --icon-height: 1.6rem;
+            display:flex;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+        &__sub-link::before {
+            content:"";
+            display: inline-block;
+            width: var(--icon-width);
+            height: var(--icon-height);
+            background-image: var(--icon);
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        &__sub-link:nth-child(2) {
+            --icon: url("../../images/icon-calendar.svg");
+        }
+
+        &__sub-link:nth-child(3) {
+            --icon: url("../../images/icon-reminders.svg");
+        }
+        &__sub-link:last-child{
+            --icon: url("../../images/icon-planning.svg");
+        }
+
+        &__main-link:nth-child(2) .main-nav__sub-link::before{
+            all: unset;
+
+        }
+
+        &__dropdown-list {
+            margin-top: var(--space-md);
+            padding-left: var(--space-sm-l);
+            overflow: hidden;
+            height:0;
+
+            display:flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+        &__group {
+            display:flex;
+            gap: 1.2rem;
+            
+        }
+
+        &__dropdown-btn {
+            .arrow-up-icon {
+                width: 1rem;
+                height: 0.6rem;
+                background-repeat: no-repeat;
+                background-image: url("../../images/icon-arrow-up.svg");
+            }
+            
+            .arrow-down-icon {
+                width: 1rem;
+                height: 0.6rem;
+                background-repeat: no-repeat;
+                background-image: url("../../images/icon-arrow-down.svg");
+            }
+            &[aria-expanded="false"] .arrow-up-icon {
+                display:none;
+            }
+            
+            &[aria-expanded="true"] .arrow-down-icon {
+                display:none;
+            } 
+    
+        }
+
+        .login-register-wrapper {
+            text-align: center;
+            margin-top: var(--space-lg-l);
+            display:flex;
+            flex-direction: column;  
+            gap: var(--space-md-l);    
+            
+            & > * {
+                color: inherit;
+            }
+
+            .register {
+                border: 2px solid var(--medium-gray);
+                padding: var(--space-sm);
+
+                border-radius: 10px;
+            }
+
+        }
+
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+
+    .header  {
+        justify-content:unset;
+        font-size: 1.8rem;
+        padding: 3.5rem;
+        padding-right: 6rem;
+
+        & .main-nav span:hover {
+            cursor: pointer;
+            color: var(--a-black);
+        }
+
+        & .login-register-wrapper :is(.login, .register):hover {
+            color: var(--a-black);
+            border-color: var(--a-black);
+
+        }
+
+        .menu-btn {
+            display: none;
+        }
+        .main-nav {
+            all: unset;
+            margin-left: var(--space-xxl);
+            width:100%;
+            display: flex;
+
+
+            &__main-list {
+                list-style: none;
+                display:flex;
+                flex-direction: row;
+
+
+                & > * + * {
+                    margin-left: var(--space-lg);
+                }
+                & :nth-child(4) {
+                    margin-top: 0;
+                   
+                }
+
+            }
+
+
+            &__main-link {
+                position:relative;
+            }
+
+            &__dropdown-list {
+                position: absolute;
+                right:0;
+                background-color: #fff;
+                padding:3rem;
+                border-radius: 8px;
+                transform: translateY(-3%);
+                opacity: 0;
+                box-shadow: 0 5px 15px rgba(0 0 0/ 0.2);
+                transition: opacity .1s linear;
+            }
+
+            &__main-link:nth-child(2) .main-nav__dropdown-list {
+                width: 10ch;
+                left:0;
+             
+            }
+
+            &__main-link {
+
+                &:has([aria-expanded="true"]) .main-nav__dropdown-list {
+                    margin-bottom:0;
+                    transition: opacity .1s linear;
+                    opacity: 1;
+                }
+            }
+
+            & .login-register-wrapper {
+                all:unset;
+                margin-left:auto;
+                
+                & > * + * {
+                    margin-left: 3rem;
+                }
+
+                & > .register {
+                    padding-inline: 3rem;
+                }
+            }
+        }
+
+    }
+}

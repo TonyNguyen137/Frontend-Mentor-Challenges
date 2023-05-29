@@ -1,0 +1,7 @@
+@mixin mdq($i) {
+    @if i == 769 {
+        @media(min-width:769px) {
+            @content;
+        }
+    }
+}
