@@ -7,6 +7,7 @@ const main = document.querySelector(".main");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  console.log(form.checkValidity());
   if (!form.checkValidity()) {
     form.classList.add("was-validated");
   } else {
@@ -20,3 +21,5 @@ buttonClose.addEventListener("click", () => {
   successContainer.classList.toggle("d-none");
   main.classList.toggle("d-md-none");
 });
+
+console.log("^[w-.]+@([w-]+.)+[w-]{2,4}$" === "^[w-.]+@([w-]+.)+[w-]{2,4}$");
