@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="assets/scss/main.scss" />
+
+    <script type="module" defer src="assets/js/main.js"></script>
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body
+    class="bg-charcoal px-md-12 vstack justify-content-center d-sm-grid"
+    style="min-height: 100dvh"
+  >
+    <main class="main">
+      <div
+        class="container-sm rounded-lg-5 d-flex flex-column flex-sm-row bg-white p-sm-12"
+      >
+        <!-- img col -->
+        <div class="col-sm-6 order-sm-1">
+          <div class="image-wrapper h-sm-100">
+            <picture>
+              <source
+                media="(min-width: 576px)"
+                srcset="../assets/images/illustration-sign-up-desktop.svg"
+              />
+              <img
+                class="h-sm-100 w-100 object-fit-sm-cover"
+                src="../assets/images/illustration-sign-up-mobile.svg"
+                alt="hero
+              image"
+              />
+            </picture>
+          </div>
+        </div>
+        <!-- img col ends -->
+
+        <!-- info col -->
+        <div
+          class="col-sm-6 d-md-flex flex-md-column justify-content-md-center"
+        >
+          <div class="wrapper bg-white p-24 p-sm-12">
+            <h1 class="fw-bold">Stay updated!</h1>
+            <h6 class="mt-16 mb-16">
+              Join 60,000+ product managers receiving monthly updates on:
+            </h6>
+            <ul class="list-unstyled d-flex flex-column gap-8">
+              <li class="list-group-item hstack gap-8 align-items-baseline">
+                <i class="fa-regular fa-circle-check text-primary"></i>
+                <p>Product discovery and building what matters</p>
+              </li>
+              <li class="list-group-item hstack gap-8 align-items-baseline">
+                <i class="fa-regular fa-circle-check text-primary"></i>
+                <p>Measuring to ensure updates are a success</p>
+              </li>
+              <li class="list-group-item hstack gap-8 align-items-baseline">
+                <i class="fa-regular fa-circle-check text-primary"></i>
+                <p>And much more!</p>
+              </li>
+            </ul>
+            <form novalidate class="needs-validation position-relative mt-32">
+              <label
+                for="email"
+                class="form-label text-capitalize mb-8 fw-bold fs-12"
+                >email address</label
+              >
+              <input
+                type="email"
+                required
+                pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                id="email"
+                class="form-control p-12"
+                placeholder="email@company.com"
+              />
+              <div
+                class="invalid-tooltip text-danger bg-white fw-bold fs-12 top-0 end-0"
+              >
+                Valid email required
+              </div>
+
+              <div class="d-grid mt-24">
+                <button class="btn py-12 text-bg-charcoal">
+                  Submit to monthly newsletter
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- info col ends -->
+      </div>
+      <div class="attribution text-center text-bg-charcoal mt-12">
+        Challenge by
+        <a
+          class="text-light"
+          href="https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a
+          class="text-light"
+          href="https://github.com/TonyNguyen137/Frontend-Mentor-Challenges"
+          >Tony&nbsp;Nguyen</a
+        >.
+      </div>
+    </main>
+    <!-- Success message start -->
+    <div
+      class="success-message d-none rounded-md-5 position-fixed start-0 end-0 top-0 bottom-0 bg-white w-fixed-md-450 h-fixed-md-450 m-md-auto"
+    >
+      <div
+        class="h-100 px-16 py-32 py-md-12 px-md-32 vstack justify-content-between justify-content-md-center gap-32"
+      >
+        <div class="vstack flex-grow-0 pt-96 pt-md-0">
+          <i class="fa-regular fa-circle-check fa-2xl text-primary"></i>
+          <h1 class="fw-bold text-charcoal mt-48 fs-56">
+            Thanks for subscribing!
+          </h1>
+          <p class="success-message__info mt-24">
+            A confirmation email has been sent to
+            <span class="email fw-bold"></span>. Please open it and click the
+            button inside to confirm your subscription.
+          </p>
+        </div>
+        <button
+          class="close-success-message-btn shadow-lg btn btn-charcoal border-0 py-16 w-100"
+        >
+          Dismiss Message
+        </button>
+      </div>
+    </div>
+    <!-- Success message end -->
+  </body>
+</html>

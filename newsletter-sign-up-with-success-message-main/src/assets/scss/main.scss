@@ -1,0 +1,16 @@
+@use "config/utilities";
+@use "config/config-bootstrap";
+
+@use "config/font.scss";
+@use "base/custom-css.scss";
+// importing core styling file
+
+$fa-font-path: "./webfonts";
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/solid.scss";
+@import "./fontawesome/brands.scss";
+
+/*mobile: 320px - 480px
+tablet: 481px-768px
+laptop: 769px - 1023px
+desktop: 1024px - 1200px */

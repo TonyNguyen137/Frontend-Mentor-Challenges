@@ -1,0 +1,124 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "fixed-width": (
+      property: width,
+      class: w-fixed,
+      responsive: true,
+      values: (
+        50: 50px,
+        300: 300px,
+        450: 450px,
+        500: 500px,
+      ),
+    ),
+
+    "fixed-height": (
+      property: height,
+      class: h-fixed,
+      responsive: true,
+      values: (
+        50: 50px,
+        300: 300px,
+        450: 450px,
+        500: 500px,
+      ),
+    ),
+
+    "height": (
+      property: height,
+      class: h,
+      responsive: true,
+      values: (
+        25: 25%,
+        50: 50%,
+        60: 60%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+      ),
+    ),
+
+    "width": (
+      property: width,
+      class: w,
+      responsive: true,
+      values: (
+        25: 25%,
+        50: 50%,
+        60: 60%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+      ),
+    ),
+
+    "min-height": (
+      property: min-height,
+      class: mh,
+      responsive: true,
+      values: (
+        25: 25%,
+        50: 50%,
+        60: 60%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+      ),
+    ),
+
+    "min-width": (
+      property: min-width,
+      class: mw,
+      responsive: true,
+      values: (
+        25: 25%,
+        50: 50%,
+        60: 60%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+      ),
+    ),
+
+    "rounded": (
+      property: border-radius,
+      responsive: true,
+      class: rounded,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-xxl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+  )
+);
+
+/*
+"height": (
+      property: height,
+      class: h,
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto
+      )
+)
+*/
+
+@import "bootstrap/scss/utilities/api";

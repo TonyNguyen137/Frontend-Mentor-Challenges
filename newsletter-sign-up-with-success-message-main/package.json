@@ -1,0 +1,26 @@
+{
+  "name": "newsletter-sign-up-with-success-message-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Newsletter sign-up form with success message coding challenge](./design/desktop-preview.jpg)",
+  "source": "src/index.html",
+  "scripts": {
+    "parcel:start": "parcel",
+    "parcel:build": "parcel build",
+    "postcss:build": "postcss src/styles.css --dir dest",
+    "postcss:watch": "postcss src/styles.css --dir dest -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@parcel/transformer-sass": "^2.9.3",
+    "parcel": "^2.9.3",
+    "postcss": "^8.4.25",
+    "postcss-cli": "^10.1.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "bootstrap": "^5.3.0"
+  }
+}

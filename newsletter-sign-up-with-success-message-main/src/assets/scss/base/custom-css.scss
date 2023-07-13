@@ -1,0 +1,16 @@
+$tomato: hsl(4, 100%, 67%);
+$grey: #ffe8e6;
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+  color: $tomato;
+  background-color: $grey;
+}
+
+.d-sm-grid {
+  place-items: center;
+}
+
+.close-success-message-btn:hover {
+  background-color: $tomato;
+  border: none;
+}

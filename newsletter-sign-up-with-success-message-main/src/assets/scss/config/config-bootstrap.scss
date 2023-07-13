@@ -1,0 +1,88 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+// @import "~bootstrap/scss/mixins";
+
+/*
+==================
+Typography
+==================
+*/
+$font-family-sans-serif: "Roboto", serif;
+
+//reset
+$paragraph-margin-bottom: 0;
+$headings-margin-bottom: 0;
+$form-label-margin-bottom: 0;
+
+// font-sizes
+$font-size-base: 1rem;
+$font-sizes: (
+  8: $font-size-base * 0.5,
+  12: $font-size-base * 0.75,
+  16: $font-size-base,
+  24: $font-size-base * 1.5,
+  48: $font-size-base * 3,
+  56: $font-size-base * 3.5,
+);
+
+// colors
+$custom-colors: (
+  "primary": hsl(4, 100%, 67%),
+  "slategrey": hsl(234, 29%, 20%),
+  "charcoal": hsl(235, 18%, 26%),
+  "grey": hsl(231, 7%, 60%),
+  "white": #fff,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+//input
+
+// containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  desktop: 1440px,
+);
+
+// Container padding
+
+$container-padding-x: 0;
+
+// breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// spacers
+$spacer: 1rem;
+$custom-spacers: (
+  8: $spacer * 0.5,
+  16: $spacer,
+  12: $spacer * 0.75,
+  24: $spacer * 1.5,
+  32: $spacer * 2,
+  40: $spacer * 2.5,
+  48: $spacer * 3,
+  56: $spacer * 3.5,
+  80: $spacer * 5,
+  96: $spacer * 8,
+);
+
+$spacers: map-merge($spacers, $custom-spacers);
+$tomato: hsl(4, 100%, 67%);
+
+$box-shadow: 0 0.5rem 1rem rgba($tomato, 0.15);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($tomato, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba($tomato, 0.175);
+$box-shadow-inset: inset 0 1px 2px rgba($tomato, 0.075);
+
+@import "~bootstrap/scss/bootstrap";
