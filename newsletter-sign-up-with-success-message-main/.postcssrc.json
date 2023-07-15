@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "@fullhuman/postcss-purgecss": {
+      "content": ["./**/*.html"],
+      "safelist": ["was-validated"]
+    }
+  }
+}
