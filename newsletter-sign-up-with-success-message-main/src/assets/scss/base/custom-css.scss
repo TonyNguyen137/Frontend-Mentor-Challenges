@@ -14,3 +14,10 @@ $grey: #ffe8e6;
   background-color: $tomato;
   border: none;
 }
+
+@media (max-height: 400px) {
+  body {
+    height: 150vh;
+    height: 150dvh;
+  }
+}
