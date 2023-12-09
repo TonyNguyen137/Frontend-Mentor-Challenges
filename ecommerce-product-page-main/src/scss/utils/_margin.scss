@@ -1,0 +1,75 @@
+@use 'variables' as *;
+@use 'sass:map';
+$marginObject: ();
+
+@for $i from 0 through 11 {
+  @debug map.set($marginObject, $i, $i * $spacer);
+  $marginObject: map-merge(
+    $marginObject,
+    (
+      $i: $i * $spacer,
+    )
+  );
+}
+
+@each $size, $value in $marginObject {
+  .m-#{$size} {
+    margin: $value;
+  }
+
+  .mt-#{$size} {
+    margin-top: $value;
+  }
+
+  .mb-#{$size} {
+    margin-bottom: $value;
+  }
+
+  .ms-#{$size} {
+    margin-left: $value;
+  }
+
+  .me-#{$size} {
+    margin-right: $value;
+  }
+
+  .mx-#{$size} {
+    margin-block: $value;
+  }
+
+  .my-#{$size} {
+    margin-inline: $value;
+  }
+
+  @each $breakpoint, $width in $breakpoints {
+    @media (min-width: $width) {
+      .m-#{$breakpoint}-#{$size} {
+        margin: $value;
+      }
+
+      .mt-#{$breakpoint}-#{$size} {
+        margin-top: $value;
+      }
+
+      .mb-#{$breakpoint}-#{$size} {
+        margin-bottom: $value;
+      }
+
+      .ms-#{$breakpoint}-#{$size} {
+        margin-left: $value;
+      }
+
+      .me-#{$breakpoint}-#{$size} {
+        margin-right: $value;
+      }
+
+      .mx-#{$breakpoint}-#{$size} {
+        margin-block: $value;
+      }
+
+      .my-#{$size} {
+        margin-inline: $value;
+      }
+    }
+  }
+}

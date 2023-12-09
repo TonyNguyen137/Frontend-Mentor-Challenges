@@ -1,0 +1,63 @@
+@use 'variables' as *;
+@use 'sass:map';
+@use 'sass:list';
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+$enable-container-classes: true !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+) !default;
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+@if $enable-container-classes {
+  // Single container class with breakpoint max-widths
+  .container,
+  // 100% wide container at all breakpoints
+  .container-fluid {
+    @include make-container();
+  }
+
+  // Responsive containers that are 100% wide until a breakpoint
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    //1. $breakpoint: sm,  $container-max-width: 540px
+    .container-#{$breakpoint} {
+      //.container-sm { width:100% }
+      @extend .container-fluid;
+    }
+
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      // $breakpoint: sm , $grid-breakpoints: (sm:576px)
+      //   @media (min-width: 576px) {@content;}
+      %responsive-container-#{$breakpoint} {
+        //%reponsive-container-sm
+        max-width: $container-max-width; // $container-max-width:540
+      }
+
+      // Extend each breakpoint which is smaller or equal to the current breakpoint
+      $extend-breakpoint: true;
+
+      @each $name, $width in $grid-breakpoints {
+        @if ($extend-breakpoint) {
+          .container#{breakpoint-infix($name, $grid-breakpoints)} {
+            //.container-sm
+            @extend %responsive-container-#{$breakpoint};
+          }
+
+          // Once the current breakpoint is reached, stop extending
+          @if ($breakpoint == $name) {
+            $extend-breakpoint: false;
+          }
+        }
+      }
+    }
+  }
+}

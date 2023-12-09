@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use 'variables' as *;
+$paddingObject: ();
+
+@for $i from 0 through 11 {
+  @debug map.set($paddingObject, $i, $i * $spacer);
+  $paddingObject: map-merge(
+    $paddingObject,
+    (
+      $i: $i * $spacer,
+    )
+  );
+}
+
+@each $key, $value in $paddingObject {
+  .p-#{$key} {
+    padding: $value;
+  }
+
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+
+  .ps-#{$key} {
+    padding-left: $value;
+  }
+
+  .pe-#{$key} {
+    padding-right: $value;
+  }
+
+  .px-#{$key} {
+    padding-inline: $value;
+  }
+
+  .py-#{$key} {
+    padding-block: $value;
+  }
+}

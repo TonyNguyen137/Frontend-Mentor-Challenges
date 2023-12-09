@@ -1,0 +1,15 @@
+.user {
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('/src/assets/images/image-avatar.png');
+    display: block;
+    background-position: center;
+    background-size: contain;
+
+    @media (min-width: 1440px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

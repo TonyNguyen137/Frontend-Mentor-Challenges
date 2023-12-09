@@ -1,0 +1,9 @@
+.main {
+  @media (min-width: 1440px) {
+    padding-top: 48px;
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 48px;
+    display: grid;
+  }
+}

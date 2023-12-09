@@ -3,138 +3,104 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="/index.4717fcfd.css">
-    <script defer="" src="/index.e5ac7667.js"></script>
+    <link rel="stylesheet" href="/index.b10d73a7.css">
+    <script defer="" src="/index.739bf03c.js"></script>
     <title>E-commerce product page</title>
   </head>
 
   <body>
-    <!-- nav -->
-    <header>
-      <nav class="navbar bg-body-tertiary p-16">
-        <div class="container-xl gap-12">
-          <button class="navbar-toggler align-self-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <div class="menu-button">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </div>
-          </button>
-
-          <a class="navbar-brand" href="#">
-            <img src="/logo.b3ecd760.svg" alt="logo">
-          </a>
-
-          <div class="nav__group ms-auto d-flex align-items-end gap-8">
-            <button type="button" class="bg-transparent position-relative p-0 border-0 d-flex align-items-end">
-              <i class="fa-solid fa-cart-shopping text-black fs-5"></i>
-              <span class="position-absolute top-0 end-0 translate-top-right badge rounded-circle bg-primary fs-8 d-none">
-                1
-                <span class="visually-hidden">number of items</span>
-              </span>
-            </button>
-
-            <div class="profile rounded-circle w-fixed-24 h-fixed-24 align-self-center">
-              <img class="img-fluid" src="/image-avatar.2984032f.png" alt="profile image">
-            </div>
-          </div>
-
-          <div class="offcanvas offcanvas-start max-w-70 p-16" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <button type="button" class="bg-transparent border-0" data-bs-dismiss="offcanvas" aria-label="Close">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link" ref="#">Collections</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Men</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Womenen</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <header class="header p-4">
+      <nav class="nav">
+        <button class="nav__menu-btn" aria-expanded="false">
+          <img class="menu-icon" src="/icon-menu.1cb7b930.svg" alt="" aria-hidden="true">
+          <img class="close-icon" src="/icon-close.1ae65c8c.svg" alt="" aria-hidden="true">
+        </button>
+        <a href="#" class="nav__brand ms-2">
+          <img src="/logo.5b34b4d1.svg" alt="logo">
+        </a>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">Collections</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Men</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Women</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Contact</a>
+          </li>
+        </ul>
       </nav>
-    </header>
-    <!-- nav ends -->
-
-    <!-- carousel -->
-    <section class="section-hero">
-      <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/image-product-1.5bc88435.jpg" class="d-block w-100" alt="product image">
-          </div>
-          <div class="carousel-item">
-            <img src="/image-product-2.f4a349ad.jpg" class="d-block w-100" alt="product image">
-          </div>
-          <div class="carousel-item">
-            <img src="/image-product-3.e8ecbe33.jpg" class="d-block w-100" alt="product image">
-          </div>
-          <div class="carousel-item">
-            <img src="/image-product-4.c6929eec.jpg" class="d-block w-100" alt="product image">
-          </div>
+      <div class="group">
+        <div class="cart">
+          <button class="cart__button">
+            <span class="cart__icon"></span>
+            <span class="cart__count"></span>
+          </button>
         </div>
-        <button class="carousel-control-prev rounded-circle w-fixed-small h-fixed-small bg-white opacity-100 start-5 my-auto" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <i class="fa-solid fa-chevron-left text-neutral-600"></i>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next rounded-circle w-fixed-small h-fixed-small bg-white opacity-100 end-5 my-auto" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <i class="fa-solid fa-chevron-right text-neutral-600"></i>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div class="user">
+          <a href="#" class="user__link">
+            <span class="user__icon"></span>
+          </a>
+        </div>
       </div>
-    </section>
-    <!-- carousel ends  -->
-    <!-- article info -->
-    <article>
-      <div class="card border-0">
-        <div class="card-body p-16">
-          <h2 class="card-subtitle mb-2 text-body-secondar text-primary text-uppercase fs-12 ls-small fw-bold">
-            Sneaker Company
-          </h2>
-          <h1 class="card-title text-capitalize fw-bold">
-            fall limited edition sneakers
-          </h1>
-          <p class="card-text text-neutral-400 fs-16">
-            These low-profile sneakers are our perfect cause wear campanion.
-            Featuring a durable rubber outer sole. They'll withstand everything
+      <div class="cart-panel">
+        <div class="cart-panel__name">Cart</div>
+        <div class="cart-panel__body">
+          <button class="checkout-btn">Checkout</button>
+          <p class="cart-panel__message">Your cart is empty.</p>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <article class="product">
+        <div class="product__img-container slider">
+          <div class="product__img-wrapper slider__wrapper">
+            <img class="slider__img" src="/image-product-1.9074a035.jpg" srcset="/image-product-1-thumbnail.4663cd6d.jpg 50w, /image-product-1.9074a035.jpg 1000w" sizes="(min-width:1440px) 50px" alt="product image">
+            <img class="slider__img" src="/image-product-2.331a5acd.jpg" srcset="/image-product-2-thumbnail.dfcd7e23.jpg 50w, /image-product-2.331a5acd.jpg 1000w" sizes="(min-width:1440px) 50px" alt="product image">
+            <img class="slider__img" src="/image-product-3.91d3ae93.jpg" srcset="/image-product-3-thumbnail.d78be6b4.jpg 50w, /image-product-3.91d3ae93.jpg 1000w" sizes="(min-width:1440px) 50px" alt="product image">
+            <img class="slider__img" src="/image-product-4.44c6b405.jpg" srcset="/image-product-4-thumbnail.b49102fa.jpg 50w, /image-product-4.44c6b405.jpg 1000w" sizes="(min-width:1440px) 50px" alt="product image">
+          </div>
+          <button data-sliderbtn="prev" class="slider__prev-btn slider-btn-js" aria-label="previous-button">
+            <img src="/icon-previous.ae1ac6af.svg" aria-hidden="true">
+          </button>
+          <button data-sliderbtn="next" class="slider__next-btn slider-btn-js" aria-label="next-button">
+            <img src="/icon-next.6b0779fe.svg" aria-hidden="true">
+          </button>
+        </div>
+        <div class="product__body">
+          <span class="product__section">Sneaker Company</span>
+          <div class="product__title">Fall Limited Edition Sneakers</div>
+          <p class="product__description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything
             the weather can offer.
           </p>
-          <div class="hstack prices gap-12 mt-12">
-            <span class="price fw-bold fs-24">$125.00</span>
-            <span class="coupon badge bg-secondary text-primary">50%</span>
-            <span class="price-original ms-auto text-neutral-300 fs-12 fw-bold text-decoration-line-through">$250.00</span>
+          <div class="product__price-group">
+            <span class="product__new-price">$125.00</span>
+            <span class="product__reduce">50%</span>
+            <span class="product__old-price">$250.00</span>
           </div>
-          <div class="input-group mt-12">
-            <button type="button" class="input-group-text border-0 bg-neutral-200 text-primary fw-bold fs-24">
-              -
-            </button>
-            <input type="number" class="form-control text-center border-0 bg-neutral-200 fw-bold" value="0" min="0" aria-label="quantity">
-            <button type="button" class="input-group-text bg-neutral-200 border-0 text-primary fw-bold fs-24">
-              +
-            </button>
+          <div class="wrapper">
+            <div class="product__number-group">
+              <button class="number-btn product__decrease-btn" data-btn="decrease">
+                &ndash;
+              </button>
+              <span class="product__number">0</span>
+              <button class="number-btn product__increase-btn" data-btn="increase">
+                +
+              </button>
+            </div>
+            <button class="product__add-to-cart">Add to cart</button>
           </div>
-
-          <button class="bg-primary w-100 text-white border rounded-3 py-12 hstack justify-content-center gap-12 fs-16 mt-12 shadow">
-            <i class="fa-solid fa-cart-shopping text-black text-white"></i>
-            Add to cart
-          </button>
         </div>
-      </div>
-    </article>
-    <!-- article info ends-->
+      </article>
+    </main>
+    <div class="overlay"></div>
   </body>
 </html>

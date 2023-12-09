@@ -1,0 +1,131 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/colors' as *;
+
+.cart {
+  position: relative;
+  &__button {
+    border: none;
+    background: transparent;
+  }
+  &__icon::before {
+    content: url('/src/assets/images/icon-cart.svg');
+    width: 22px;
+    height: 20px;
+    display: block;
+  }
+
+  &__count {
+    background: $primary-clr-100;
+    color: white;
+    border-radius: 99999px;
+    padding: 2px 6px;
+    font-size: 0.5rem;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25%, -40%);
+    display: none;
+  }
+
+  &__count.has-item {
+    display: block;
+  }
+}
+
+.cart:hover {
+  cursor: pointer;
+}
+
+.cart-panel {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 102%);
+  width: 96%;
+  background: white;
+  z-index: 2;
+  border-radius: 8px;
+  min-height: rem(250);
+  padding: 16px 0 24px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+
+  @media (min-width: 1440px) {
+    max-width: rem(400);
+    left: revert;
+    transform: translateY(90%);
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 25px rgba(0 0 0 / 0.2);
+  }
+
+  &__name {
+    border-bottom: 1px solid lightgrey;
+    padding-inline: 16px;
+    padding-bottom: 32px;
+  }
+
+  &__body {
+    display: grid;
+    place-items: center;
+    padding-inline: 16px;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 1rem;
+  }
+
+  &__item-name {
+    color: $neutral-clr-300;
+  }
+
+  &__item-information {
+    display: grid;
+  }
+
+  &__item-total-price {
+    color: #000;
+    font-weight: 700;
+  }
+
+  &__img {
+    width: rem(48);
+    border-radius: 4px;
+  }
+
+  .group {
+    color: $neutral-clr-300;
+  }
+}
+
+.cart-panel.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.checkout-btn {
+  background-color: $primary-clr-100;
+  border: none;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: none;
+}
+
+.checkout-btn.show {
+  display: block;
+}
