@@ -19,3 +19,4 @@ node_modules
 README-template
 README.md
 .parcel-cache
+dist
